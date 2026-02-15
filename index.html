@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Toastify CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Loja de Produtos</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <h1>Produtos</h1>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Pesquisar produto..."
+        class="search-input"
+      />
+
+      <div class="cart-icon" id="cartIcon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- GRID DE PRODUTOS (CARREGADO VIA API) -->
+      <div class="product-grid" id="productGrid">
+        <p class="loading">Carregando produtos...</p>
+      </div>
+
+      <!-- SIDEBAR DO CARRINHO -->
+      <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+          <h2>Seu Carrinho</h2>
+          <button id="closeCart" class="close-btn">×</button>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+          <div id="emptyCartMessage" class="empty-cart">
+            <span>Seu carrinho está vazio</span>
+          </div>
+          <!-- Produtos adicionados aparecem aqui -->
+        </div>
+
+        <div class="cart-footer">
+          <div class="cart-total">
+            Total: <span id="cartTotal" class="price">R$ 0,00</span>
+          </div>
+          <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Toastify JS (ANTES do seu JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Seu Script -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
