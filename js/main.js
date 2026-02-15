@@ -42,8 +42,9 @@ const productGrid = document.getElementById("productGrid");
 
 async function loadProducts() {
   try {
-    const response = await fetch("http://localhost:3000/products");
-    const products = await response.json();
+    const response = await fetch("./data/db.json");
+    const data = await response.json();
+    const products = data.products;
 
     productGrid.innerHTML = "";
 
@@ -52,12 +53,16 @@ async function loadProducts() {
       card.classList.add("product-card");
 
       card.innerHTML = `
-        <img src="${product.image}" alt="${product.title}" >
+        <img src="${product.image}" alt="${product.title}">
         <h2 class="product-title">${product.title}</h2>
         <p>${product.description}</p>
         <span class="price">R$ ${product.price}</span>
-        
-        <button class="add-to-cart" title="Adicionar ${product.title} ao carrinho" aria-label="Adicionar ${product.title} ao carrinho">Adicionar ao carrinho</button>
+        <button 
+          class="add-to-cart"
+          title="Adicionar ${product.title} ao carrinho"
+          aria-label="Adicionar ${product.title} ao carrinho">
+          Adicionar ao carrinho
+        </button>
       `;
 
       productGrid.appendChild(card);

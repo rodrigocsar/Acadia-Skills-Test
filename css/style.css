@@ -146,8 +146,8 @@ header {
 ========================= */
 
 .cart-icon {
-  position: relative;
-  left: 22.4rem;
+  position: absolute;
+  right: 1.5rem;
   font-size: 23px;
   cursor: pointer;
 }
