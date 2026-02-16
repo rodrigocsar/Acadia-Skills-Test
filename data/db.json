@@ -2,163 +2,24 @@
   "products": [
     {
       "id": 1,
-      "title": "Notebook Dell XPS 15",
-      "description": "Notebook premium com tela InfinityEdge 15.6'' 4K OLED, Intel Core i9, 32GB RAM, SSD 1TB, RTX 3050 Ti. Perfeito para edição de vídeo e jogos.",
-      "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=500",
-      "price": 15499.9,
-      "category": "Notebooks"
+      "title": "Fone de Ouvido Bluetooth",
+      "description": "Fone sem fio com cancelamento de ruído e bateria de longa duração",
+      "price": 299.9,
+      "image": "https://via.placeholder.com/300x200"
     },
     {
       "id": 2,
-      "title": "iPhone 15 Pro Max",
-      "description": "Smartphone Apple com chip A17 Pro, câmera tripla de 48MP, tela Super Retina XDR 6.7'', 256GB, titânio, iOS 17.",
-      "image": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500",
-      "price": 10999.9,
-      "category": "Smartphones"
+      "title": "Smartwatch Esportivo",
+      "description": "Monitor cardíaco, GPS, resistente à água, compatível com iOS e Android",
+      "price": 899.9,
+      "image": "https://via.placeholder.com/300x200"
     },
     {
       "id": 3,
-      "title": "Monitor Gamer Samsung Odyssey G9",
-      "description": "Monitor Ultra-wide 49'' curvo, resolução Dual QHD, 240Hz, 1ms, QLED, suporte a HDR1000, G-Sync e FreeSync.",
-      "image": "https://images.unsplash.com/photo-1619953942547-233eab5a70d6?w=500",
-      "price": 8999.9,
-      "category": "Monitores"
-    },
-    {
-      "id": 4,
-      "title": "Teclado Mecânico Redragon Kumara",
-      "description": "Teclado gamer RGB com switches Outemu Blue, estrutura em aço, anti-ghosting, design compacto sem numpad.",
-      "image": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?w=500",
-      "price": 249.9,
-      "category": "Periféricos"
-    },
-    {
-      "id": 5,
-      "title": "Mouse Logitech G Pro X Superlight",
-      "description": "Mouse sem fio ultraleve com 63g, sensor HERO 25K, 25.600 DPI, bateria de 70h, design ambidestro.",
-      "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=500",
-      "price": 899.9,
-      "category": "Periféricos"
-    },
-    {
-      "id": 6,
-      "title": "Headset HyperX Cloud Alpha",
-      "description": "Headset gamer com drivers de dupla câmara, som surround virtual 7.1, almofadas de memória foam, microfone removível.",
-      "image": "https://images.unsplash.com/photo-1599669454699-248893623440?w=500",
-      "price": 549.9,
-      "category": "Áudio"
-    },
-    {
-      "id": 7,
-      "title": "SSD NVMe Kingston 1TB",
-      "description": "SSD interno NVMe M.2 2280, leitura 3500MB/s, gravação 3000MB/s, ideal para upgrade de performance.",
-      "image": "https://images.unsplash.com/photo-1567436645792-9253feae48db?w=500",
-      "price": 379.9,
-      "category": "Armazenamento"
-    },
-    {
-      "id": 8,
-      "title": "Placa de Vídeo RTX 4060 Ti",
-      "description": "Placa de vídeo NVIDIA com 8GB GDDR6, DLSS 3, Ray Tracing, 4352 CUDA cores, ideal para jogos em 1440p.",
-      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500",
-      "price": 2999.9,
-      "category": "Hardware"
-    },
-    {
-      "id": 9,
-      "title": "Smart TV LG OLED 55'' 4K",
-      "description": "Smart TV com painel OLED evo, processador α9 Gen6, 120Hz, HDR, webOS 23, compatível com Alexa e Google Assistente.",
-      "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=500",
-      "price": 5499.9,
-      "category": "TVs"
-    },
-    {
-      "id": 10,
-      "title": "iPad Pro 12.9'' M2",
-      "description": "Tablet Apple com chip M2, tela Liquid Retina XDR, 128GB, 5G, compatível com Apple Pencil e Magic Keyboard.",
-      "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500",
-      "price": 10499.9,
-      "category": "Tablets"
-    },
-    {
-      "id": 11,
-      "title": "Fone Sony WH-1000XM5",
-      "description": "Fone Bluetooth com cancelamento de ruído líder do mercado, bateria 30h, carregamento rápido, som de alta resolução.",
-      "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=500",
-      "price": 2199.9,
-      "category": "Áudio"
-    },
-    {
-      "id": 12,
-      "title": "Cadeira ThunderX3 TGC12",
-      "description": "Cadeira gamer com design racing, estrutura em aço, reclinação 180°, apoio 4D, almofadas inclusas, capacidade 150kg.",
-      "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=500",
-      "price": 1299.9,
-      "category": "Móveis"
-    },
-    {
-      "id": 13,
-      "title": "Processador AMD Ryzen 7 7800X3D",
-      "description": "Processador com 8 núcleos e 16 threads, cache 3D V-Cache, até 5.0GHz, soquete AM5, ideal para games.",
-      "image": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=500",
-      "price": 2499.9,
-      "category": "Hardware"
-    },
-    {
-      "id": 14,
-      "title": "Smartwatch Samsung Galaxy Watch6",
-      "description": "Smartwatch com tela Super AMOLED 1.5'', GPS, monitoramento cardíaco, ECG, pressão arterial, bateria de 40h.",
-      "image": "https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500",
-      "price": 1799.9,
-      "category": "Wearables"
-    },
-    {
-      "id": 15,
-      "title": "Caixa de Som JBL Charge 5",
-      "description": "Caixa Bluetooth à prova d'água, bateria de 20h, power bank, som potente com radiadores passivos, conexão via app.",
-      "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500",
-      "price": 899.9,
-      "category": "Áudio"
-    },
-    {
-      "id": 16,
-      "title": "Roteador Mesh TP-Link Deco X60",
-      "description": "Sistema mesh WiFi 6, cobertura de até 400m², conecta até 150 dispositivos, controle parental, segurança integrada.",
-      "image": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=500",
-      "price": 1299.9,
-      "category": "Redes"
-    },
-    {
-      "id": 17,
-      "title": "Webcam Logitech C920s",
-      "description": "Webcam Full HD 1080p, 30fps, correção automática de luz, microfone estéreo, obturador de privacidade incluso.",
-      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500",
-      "price": 449.9,
-      "category": "Periféricos"
-    },
-    {
-      "id": 18,
-      "title": "Nintendo Switch OLED",
-      "description": "Console híbrido com tela OLED 7'', 64GB, dock com ethernet, som aprimorado, suporte para jogar no modo mesa.",
-      "image": "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=500",
-      "price": 2299.9,
-      "category": "Games"
-    },
-    {
-      "id": 19,
-      "title": "HD Externo Seagate 4TB",
-      "description": "HD externo portátil, USB 3.0, plug-and-play, compatível com PC e Mac, software de backup incluso.",
-      "image": "https://images.unsplash.com/photo-1544731612-b9c20ff0b4b1?w=500",
-      "price": 599.9,
-      "category": "Armazenamento"
-    },
-    {
-      "id": 20,
-      "title": "Impressora Epson EcoTank L3250",
-      "description": "Impressora multifuncional tanque de tinta, Wi-Fi, impressão frente e verso, até 4500 páginas em preto incluso.",
-      "image": "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=500",
-      "price": 1299.9,
-      "category": "Impressoras"
+      "title": "Carregador Portátil 10000mAh",
+      "description": "Power bank com carregamento rápido e 2 entradas USB",
+      "price": 149.9,
+      "image": "https://via.placeholder.com/300x200"
     }
   ]
 }

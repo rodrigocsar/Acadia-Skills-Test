@@ -1,6 +1,5 @@
 const buttons = document.querySelectorAll(".add-to-cart");
 const searchInput = document.getElementById("searchInput");
-const addProductBtn = document.getElementById("addProductBtn");
 
 /*carrinho*/
 
@@ -48,32 +47,84 @@ async function loadProducts() {
 
     productGrid.innerHTML = "";
 
-    products.forEach((product) => {
+    // Pega só os 3 primeiros produtos
+    const initialProducts = products.slice(0, 3);
+
+    // CRIA OS CARDS CORRETAMENTE
+    initialProducts.forEach((product) => {
       const card = document.createElement("div");
       card.classList.add("product-card");
 
       card.innerHTML = `
-        <img src="${product.image}" alt="${product.title}">
+        <img src="${product.image}" alt="${product.title}" loading="lazy">
         <h2 class="product-title">${product.title}</h2>
         <p>${product.description}</p>
         <span class="price">R$ ${product.price}</span>
-        <button 
-          class="add-to-cart"
-          title="Adicionar ${product.title} ao carrinho"
-          aria-label="Adicionar ${product.title} ao carrinho">
-          Adicionar ao carrinho
-        </button>
+        <button class="add-to-cart" title="Adicionar ${product.title} ao carrinho">Adicionar ao carrinho</button>
       `;
 
       productGrid.appendChild(card);
     });
   } catch (error) {
     console.error("Erro ao carregar produtos:", error);
+    productGrid.innerHTML = '<p class="error">Erro ao carregar produtos.</p>';
   }
 }
 
 loadProducts();
 
+// ====== ADICIONAR NOVO PRODUTO EXEMPLO ======
+// ====== ADICIONAR NOVO PRODUTO ======
+// ====== ADICIONAR NOVO PRODUTO ======
+const addProductBtn = document.getElementById("addProductBtn");
+
+if (addProductBtn) {
+  // REMOVE todos os listeners antigos (clonando e substituindo)
+  const newButton = addProductBtn.cloneNode(true);
+  addProductBtn.parentNode.replaceChild(newButton, addProductBtn);
+
+  // Agora usa o NOVO botão
+  const freshButton = document.getElementById("addProductBtn");
+
+  freshButton.addEventListener("click", () => {
+    console.log("Clique detectado no botão NOVO"); // Para debug
+
+    const productName = prompt("Digite o nome do produto:", "Novo Produto");
+
+    if (!productName || productName.trim() === "") {
+      showToast("Operação cancelada", "error");
+      return;
+    }
+
+    // Array de imagens de produtos tecnológicos
+    const techImages = [
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1546868871-0f936fb1c57d?w=300&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1585298723682-7115561c51b7?w=300&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=300&h=200&fit=crop",
+      "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=300&h=200&fit=crop",
+    ];
+
+    const randomImage =
+      techImages[Math.floor(Math.random() * techImages.length)];
+
+    const newCard = document.createElement("div");
+    newCard.classList.add("product-card");
+
+    newCard.innerHTML = `
+      <img src="${randomImage}" alt="${productName}" loading="lazy">
+      <h2 class="product-title">${productName}</h2>
+      <p>Descrição do produto ${productName}.</p>
+      <span class="price">R$ 199,90</span>
+      <button class="add-to-cart" title="Adicionar ${productName} ao carrinho">Adicionar ao carrinho</button>
+    `;
+
+    productGrid.appendChild(newCard);
+    showToast(`Produto "${productName}" adicionado!`, "success");
+  });
+}
 // Carrinho
 
 const cartIcon = document.getElementById("cartIcon");
@@ -209,7 +260,9 @@ function showToast(message, type = "success") {
     duration: 3000,
     gravity: "top",
     position: "center",
-    backgroundColor: type === "success" ? "#28a745" : "#dc3545",
+    style: {
+      background: type === "success" ? "#28a745" : "#dc3545", // ← nova forma
+    },
     close: true,
     stopOnFocus: true,
   }).showToast();
