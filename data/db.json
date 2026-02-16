@@ -5,21 +5,21 @@
       "title": "Fone de Ouvido Bluetooth",
       "description": "Fone sem fio com cancelamento de ruído e bateria de longa duração",
       "price": 299.9,
-      "image": "https://via.placeholder.com/300x200"
+      "image": "https://images.pexels.com/photos/3394659/pexels-photo-3394659.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop"
     },
     {
       "id": 2,
       "title": "Smartwatch Esportivo",
       "description": "Monitor cardíaco, GPS, resistente à água, compatível com iOS e Android",
       "price": 899.9,
-      "image": "https://via.placeholder.com/300x200"
+      "image": "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop"
     },
     {
       "id": 3,
       "title": "Carregador Portátil 10000mAh",
       "description": "Power bank com carregamento rápido e 2 entradas USB",
       "price": 149.9,
-      "image": "https://via.placeholder.com/300x200"
+      "image": "https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=300&h=200&fit=crop"
     }
   ]
 }

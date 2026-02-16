@@ -98,13 +98,11 @@ if (addProductBtn) {
 
     // Array de imagens de produtos tecnológicos
     const techImages = [
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1546868871-0f936fb1c57d?w=300&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=300&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1585298723682-7115561c51b7?w=300&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=300&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1600080972464-8e5f35f63d08?w=300&h=200&fit=crop",
-      "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=300&h=200&fit=crop",
+      "https://picsum.photos/300/200?random=1",
+      "https://picsum.photos/300/200?random=2",
+      "https://picsum.photos/300/200?random=3",
+      "https://picsum.photos/300/200?random=4",
+      "https://picsum.photos/300/200?random=5",
     ];
 
     const randomImage =
