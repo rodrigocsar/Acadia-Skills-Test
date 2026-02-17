@@ -21,14 +21,52 @@
   </head>
 
   <body>
+    <div class="modal-overlay" id="productModal">
+      <div class="modal">
+        <h3>Add New Product</h3>
+
+        <input type="text" id="modalName" placeholder="Product name" />
+
+        <textarea
+          id="modalDescription"
+          placeholder="Product description"
+        ></textarea>
+
+        <input
+          type="number"
+          id="modalPrice"
+          placeholder="Price"
+          step="0.01"
+          min="0"
+        />
+
+        <input type="file" id="modalImage" accept="image/*" />
+
+        <div class="modal-actions">
+          <button id="cancelModal" class="btn-secondary">Cancel</button>
+          <button id="confirmModal" class="btn-primary">Add Product</button>
+        </div>
+      </div>
+    </div>
+
+    <!--IMPLEMENTAÇÃO EXTRA DELETE CONFIRM MODAL -->
+    <div class="modal-overlay" id="deleteModal">
+      <div class="modal confirm-modal">
+        <h3>Are you sure you want to remove this product?</h3>
+        <div class="modal-actions">
+          <button id="cancelDelete" class="btn-secondary">No</button>
+          <button id="confirmDelete" class="btn-primary">Yes</button>
+        </div>
+      </div>
+    </div>
     <!-- HEADER -->
     <header>
-      <h1>Produtos</h1>
+      <h1>Products</h1>
 
       <input
         type="text"
         id="searchInput"
-        placeholder="Pesquisar produto..."
+        placeholder="Search product..."
         class="search-input"
       />
 
@@ -39,41 +77,40 @@
     </header>
 
     <main class="container">
-      <button id="addProductBtn" class="add-sample-btn">
-        + Adicionar Produto Exemplo
-      </button>
-      <!-- GRID DE PRODUTOS (CARREGADO VIA API) -->
+      <button id="addProductBtn" class="add-sample-btn">+ Add Product</button>
+
+      <!-- PRODUCT GRID (LOADED VIA API) -->
       <div class="product-grid" id="productGrid">
-        <p class="loading">Carregando produtos...</p>
+        <p class="loading">Loading products...</p>
       </div>
 
-      <!-- SIDEBAR DO CARRINHO -->
+      <!-- CART SIDEBAR -->
       <aside class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-          <h2>Seu Carrinho</h2>
+          <h2>Your Cart</h2>
           <button id="closeCart" class="close-btn">×</button>
         </div>
 
         <div class="cart-items" id="cartItems">
           <div id="emptyCartMessage" class="empty-cart">
-            <span>Seu carrinho está vazio</span>
+            <span>Your cart is empty</span>
           </div>
-          <!-- Produtos adicionados aparecem aqui -->
+          <!-- Added products appear here -->
         </div>
 
         <div class="cart-footer">
           <div class="cart-total">
-            Total: <span id="cartTotal" class="price">R$ 0,00</span>
+            Total: <span id="cartTotal" class="price">$0.00</span>
           </div>
-          <button class="checkout-btn">Finalizar Compra</button>
+          <button class="checkout-btn">Checkout</button>
         </div>
       </aside>
     </main>
 
-    <!-- Toastify JS (ANTES do seu JS) -->
+    <!-- Toastify JS (BEFORE your JS) -->
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    <!-- Seu Script -->
+    <!-- Your Script -->
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>
