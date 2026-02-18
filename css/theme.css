@@ -103,12 +103,12 @@ body {
     transform 0.3s ease;
 }
 
-[data-theme="light"] .fa-sun,
-[data-theme="dark"] .fa-moon {
+[data-theme="light"] .theme .fa-sun,
+[data-theme="dark"] .theme .fa-moon {
   display: inline-block;
 }
 
-[data-theme="light"] .fa-moon,
-[data-theme="dark"] .fa-sun {
+[data-theme="light"] .theme .fa-moon,
+[data-theme="dark"] .theme .fa-sun {
   display: none;
 }

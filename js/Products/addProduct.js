@@ -84,14 +84,14 @@ export function setupAddProduct() {
       return;
     }
 
-    // VERIFICAÇÃO DE DUPLICIDADE
+    // DUPLICATE VERIFICATION
+
     if (isProductDuplicate(name)) {
       showToast(`Product "${name}" already exists!`, "error");
 
-      // Opcional: destacar o produto existente
       highlightExistingProduct(name);
 
-      return; // Interrompe o cadastro
+      return;
     }
 
     const reader = new FileReader();
