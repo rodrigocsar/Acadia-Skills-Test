@@ -1,6 +1,4 @@
-/* 
-   RESET
- */
+/* ---------------------------------------------- RESET*/
 
 * {
   margin: 0;
@@ -8,9 +6,7 @@
   box-sizing: border-box;
 }
 
-/* 
-   BASE
- */
+/* ----------------------------------------------- BASE*/
 
 body {
   font-family: Arial, sans-serif;
@@ -33,9 +29,7 @@ header {
   gap: 2rem;
 }
 
-/* 
-   Button
- */
+/* ------------------------------------------------------- BUTTON*/
 
 button {
   transition: all 0.15s ease;
@@ -50,9 +44,7 @@ button:hover {
   transition: background-color 0.2s ease;
 }
 
-/* 
-   BUSCA & BOTÃO AMOSTRA
- */
+/* --------------------------------------------------------- SEARCH */
 
 .search-input {
   width: 50%;
@@ -73,9 +65,7 @@ button:hover {
   cursor: pointer;
 }
 
-/*
-
-Modal*/
+/*---------------------------------------------------------- MODAL*/
 
 .modal textarea {
   width: 100%;
@@ -161,9 +151,16 @@ Modal*/
   }
 }
 
-/*
+/* ---------------------------------------------------- GRID PRODUCTS*/
 
-IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+/* ---------------------------------------------- EXTRA-IMPLEMENTATION  */
+
+/* ----------------------  IMPLEMENTATION OF PRODUCT REMOVAL CONFIRMATION */
 
 .confirm-modal {
   text-align: center;
@@ -172,8 +169,8 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
 .product-actions {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Alinha verticalmente */
-  gap: 4px; /* Espaço entre os botões */
+  align-items: center;
+  gap: 4px;
   width: 100%;
 }
 
@@ -199,19 +196,7 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   transform: scale(1.1);
 }
 
-/* 
-   GRID DE PRODUTOS
- */
-
-.product-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-/* 
-   CARD DE PRODUTO
- */
+/* -------------------------------------------------------- CARD PRODUCTS*/
 
 .product-card {
   background: white;
@@ -250,22 +235,17 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   cursor: pointer;
 }
 
-/* Estado quando adicionado */
 .product-card.added {
   border: 2px solid #2c7a2c;
   background: #f0fff4;
 }
 
-/* 
-   ÍCONE DO CARRINHO
- */
+/* -------------------------------------------------- ÍCONE DO CARRINHO*/
 
 .cart-icon {
   position: absolute;
   font-size: 20px;
   cursor: pointer;
-
-  /* Opcional: dar um pouco mais de área de clique */
   padding: 8px;
 }
 
@@ -280,9 +260,7 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   right: -10px;
 }
 
-/* 
-   SIDEBAR DO CARRINHO
- */
+/* ------------------------------------------------ SIDEBAR DO CARRINHO*/
 
 .cart-sidebar {
   position: fixed;
@@ -327,9 +305,7 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   background: none;
 }
 
-/* 
-   LISTA DE ITENS
- */
+/* ------------------------------------------------------- LIST OF ITEMS */
 
 .cart-items {
   display: flex;
@@ -349,9 +325,7 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   font-size: 16px;
 }
 
-/* 
-   CARD DENTRO DO CARRINHO
- */
+/*  ------------------------------------------------  CARD INSIDE THE CART*/
 
 .cart-sidebar .product-card {
   display: flex;
@@ -399,9 +373,7 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   width: fit-content;
 }
 
-/* 
-   FOOTER DO CARRINHO
- */
+/* ------------------------------------------------- FOOTER CART*/
 
 .cart-footer {
   border-top: 1px solid #ddd;

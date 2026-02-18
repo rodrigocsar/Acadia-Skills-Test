@@ -11,7 +11,7 @@ export function showToast(message, type = "success") {
 }
 
 export function initAOS() {
-  // Verifica se AOS existe antes de inicializar
+  // Checks if AOS exists before initializing.
   if (typeof AOS !== "undefined") {
     AOS.init({
       duration: 600,

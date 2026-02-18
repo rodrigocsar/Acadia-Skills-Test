@@ -13,7 +13,7 @@ export function setupAddProduct() {
   const priceInput = document.getElementById("modalPrice");
   const imageInput = document.getElementById("modalImage");
 
-  // Função auxiliar para verificar se produto já existe
+  // Auxiliary function to check if a product already exists.
   function isProductDuplicate(productName) {
     const existingProducts = document.querySelectorAll(
       ".product-card .product-title",
@@ -22,20 +22,20 @@ export function setupAddProduct() {
 
     for (let product of existingProducts) {
       if (product.textContent.toLowerCase().trim() === productNameLower) {
-        return true; // Produto duplicado encontrado
+        return true;
       }
     }
-    return false; // Produto não existe
+    return false;
   }
 
-  // iMPLEMTAÇÃO EXTRA LOGICA DE REMOÇÃO DE PRODURTO
+  // EXTRA-LOGICAL IMPLEMENTATION OF PRODUCT REMOVAL
   const deleteModal = document.getElementById("deleteModal");
   const confirmDelete = document.getElementById("confirmDelete");
   const cancelDelete = document.getElementById("cancelDelete");
 
   let productToDelete = null;
 
-  // delegação para funcionar em cards dinâmicos
+  // delegation to work on dynamic cards
   document.addEventListener("click", (e) => {
     if (e.target.closest(".delete-btn")) {
       productToDelete = e.target.closest(".product-card");
@@ -62,17 +62,17 @@ export function setupAddProduct() {
 
   if (!addProductBtn) return;
 
-  // ABRIR MODAL
+  // OPEN MODAL
   addProductBtn.addEventListener("click", () => {
     modal.style.display = "flex";
   });
 
-  // FECHAR MODAL
+  // CLOSE MODAL
   cancelModal.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // CONFIRMAR
+  // CONFIRM
   confirmModal.addEventListener("click", () => {
     const name = nameInput.value.trim();
     const description = descInput.value.trim();
@@ -135,7 +135,6 @@ export function setupAddProduct() {
     reader.readAsDataURL(file);
   });
 
-  // Função opcional para destacar produto existente
   function highlightExistingProduct(productName) {
     const existingProducts = document.querySelectorAll(".product-card");
     const productNameLower = productName.toLowerCase().trim();
@@ -146,12 +145,12 @@ export function setupAddProduct() {
         .textContent.toLowerCase()
         .trim();
       if (title === productNameLower) {
-        // Remove highlight anterior se existir
+        // Remove highlight
         card.style.transition = "all 0.3s ease";
         card.style.boxShadow = "0 0 15px rgba(255, 0, 0, 0.5)";
         card.style.transform = "scale(1.02)";
 
-        // Remove o destaque após 2 segundos
+        // Remove  2 sec
         setTimeout(() => {
           card.style.boxShadow = "";
           card.style.transform = "";

@@ -30,13 +30,11 @@
     min-height: 36px;
   }
 
-  /* GRID 3 COLUNAS */
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 6px;
   }
 
-  /* CARDS COMPACTOS */
   .product-card {
     padding: 6px;
     gap: 3px;
@@ -57,10 +55,10 @@
 
   .product-card p {
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* Vendor prefix para WebKit */
-    line-clamp: 1; /* Propriedade padrão */
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
-    box-orient: vertical; /* Propriedade padrão */
+    box-orient: vertical;
     overflow: hidden;
   }
 
@@ -71,8 +69,8 @@
   .product-actions {
     display: flex;
     flex-direction: row;
-    align-items: center; /* Alinha verticalmente */
-    gap: 4px; /* Espaço entre os botões */
+    align-items: center;
+    gap: 4px;
     width: 100%;
   }
 
@@ -93,7 +91,6 @@
     margin-right: 2%;
   }
 
-  /* MODAL */
   .modal {
     width: 95%;
     padding: 12px;
@@ -105,7 +102,6 @@
     font-size: 12px;
   }
 
-  /* SIDEBAR */
   .cart-sidebar {
     width: 100%;
     padding: 12px;
@@ -117,10 +113,8 @@
   }
 }
 
-/* ------------------------------------
-   MOBILE EXTRA PEQUENO
-   (< 400px) - AJUSTES FINOS
------------------------------------- */
+/* --------------------------------------------------------- MOBILE SMALL */
+
 @media (max-width: 400px) {
   .theme {
     font-size: 16px;
@@ -138,10 +132,10 @@
   .product-card p {
     font-size: 9px;
     display: -webkit-box;
-    -webkit-line-clamp: 1; /* Vendor prefix para WebKit */
-    line-clamp: 1; /* Propriedade padrão */
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     -webkit-box-orient: vertical;
-    box-orient: vertical; /* Propriedade padrão */
+    box-orient: vertical;
     overflow: hidden;
   }
   .price {
@@ -158,13 +152,9 @@
   }
 }
 
-/* ------------------------------------
-   TABLET
-   (≥768px e <1024px) - 2 COLUNAS
------------------------------------- */
+/* ---------------------------------------------- TABLET (≥768px e <1024px) 
+ */
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* CART */
-
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
@@ -213,10 +203,8 @@
   }
 }
 
-/* ------------------------------------
-   DESKTOP
-   (≥1024px) - 3 COLUNAS
------------------------------------- */
+/* ---------------------------------------------------- DESKTOP (≥1024px) */
+
 @media (min-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
