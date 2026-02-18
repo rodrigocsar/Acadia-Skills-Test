@@ -1,9 +1,5 @@
 import { showToast } from "./ui.js";
 
-/* =========================
-   VARIÁVEIS (escopo do módulo)
-========================= */
-
 let cartIcon;
 let cartSidebar;
 let closeCart;
@@ -12,9 +8,7 @@ let cartCount;
 let cartTotal;
 let emptyMessage;
 
-/* =========================
-   INIT
-========================= */
+//    INIT
 
 export function initCart() {
   cartIcon = document.getElementById("cartIcon");
@@ -29,9 +23,7 @@ export function initCart() {
   updateCartCount();
 }
 
-/* =========================
-   EVENTOS
-========================= */
+// EVENTS
 
 function setupCartEvents() {
   cartIcon.addEventListener("click", () => {
@@ -42,7 +34,7 @@ function setupCartEvents() {
     cartSidebar.classList.remove("open");
   });
 
-  // Event Delegation (melhor prática)
+  // Event Delegation
   document.addEventListener("click", (e) => {
     if (e.target.classList.contains("add-to-cart")) {
       toggleCart(e.target);
@@ -50,9 +42,7 @@ function setupCartEvents() {
   });
 }
 
-/* =========================
-   LÓGICA DO CARRINHO
-========================= */
+/*  LOGIC OF THE SHOPPING CART */
 
 function toggleCart(button) {
   const card = button.closest(".product-card");
@@ -62,12 +52,12 @@ function toggleCart(button) {
     card.classList.add("added");
     button.textContent = "Adicionado";
     addCardToCart(card, title);
-    showToast("Produto adicionado ao carrinho", "success");
+    showToast("Product removed from cart", "success");
   } else {
     card.classList.remove("added");
-    button.textContent = "Adicionar ao carrinho";
+    button.textContent = "Add to Cart";
     removeCardFromCart(title);
-    showToast("Produto removido do carrinho", "error");
+    showToast("Product removed from cart", "error");
   }
 }
 
@@ -85,14 +75,14 @@ function addCardToCart(card, title) {
   contentWrapper.classList.add("cart-content");
 
   const removeBtn = document.createElement("button");
-  removeBtn.textContent = "Remover";
+  removeBtn.textContent = "Remove";
   removeBtn.classList.add("remove-btn");
 
   removeBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     removeCardFromCart(title);
     syncOriginalCardState(title);
-    showToast("Produto removido do carrinho", "error");
+    showToast("Product removed from cart", "error");
   });
 
   contentWrapper.append(productTitle, description, price, removeBtn);
@@ -116,13 +106,11 @@ function syncOriginalCardState(title) {
   if (originalCard) {
     originalCard.classList.remove("added");
     const btn = originalCard.querySelector(".add-to-cart");
-    if (btn) btn.textContent = "Adicionar ao carrinho";
+    if (btn) btn.textContent = "Add to Cart";
   }
 }
 
-/* =========================
-   CONTADOR & TOTAL
-========================= */
+// COUNTER & TOTAL
 
 function updateCartCount() {
   const items = cartItems.querySelectorAll(".product-card").length;
