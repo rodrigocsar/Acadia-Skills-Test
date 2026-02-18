@@ -71,18 +71,6 @@
   }
 
   /* CART */
-  .cart-icon {
-    position: static;
-    font-size: 16px;
-  }
-
-  .cart-count {
-    font-size: 9px;
-    padding: 1px 4px;
-    min-width: 14px;
-    height: 14px;
-    top: 5%;
-  }
 
   .modal {
     width: 95%;
@@ -186,9 +174,5 @@
 
   .product-card img {
     height: 200px;
-  }
-
-  .cart-icon {
-    right: 5.7rem;
   }
 }

@@ -50,8 +50,15 @@ button:hover {
   width: 50%;
   padding: 10px;
   margin: 16px 0;
-  border-radius: 6px;
+  border-radius: 20px;
+
   border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--button-primary);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 .add-sample-btn {
@@ -236,8 +243,7 @@ button:hover {
 }
 
 .product-card.added {
-  border: 2px solid #2c7a2c;
-  background: #f0fff4;
+  border: 2px solid #342c7a;
 }
 
 /* -------------------------------------------------- ÍCONE DO CARRINHO*/
@@ -245,28 +251,76 @@ button:hover {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px; /* Gap menor no mobile */
+  flex-wrap: wrap; /* Permite quebra se necessário */
 }
 
+/* Container de ícones */
 .container-icons {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-left: auto; /* MAGIA! Empurra para a direita */
-}
-.cart-icon {
-  font-size: 24px;
+  gap: 8px; /* Gap menor no mobile */
+  margin-left: auto; /* Empurra para direita */
 }
 
+/* Theme toggle */
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; /* Menor no mobile */
+  height: 36px;
+  font-size: 18px;
+  padding: 6px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Não encolhe */
+}
+
+/* Carrinho */
+.cart-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; /* Menor no mobile */
+  height: 36px;
+  font-size: 20px; /* Menor no mobile */
+  margin-right: 0; /* Remove margem fixa */
+  border-radius: 50%;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Não encolhe */
+}
+
+/* Contador do carrinho */
 .cart-count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
   background: red;
   color: white;
-  font-size: 12px;
-  padding: 1px 4px;
+  font-size: 10px; /* Menor no mobile */
+  font-weight: bold;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 3px;
   border-radius: 50%;
-  position: absolute;
-  top: 15px;
-  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Input de busca */
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--button-primary);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 /* ------------------------------------------------ SIDEBAR DO CARRINHO*/
