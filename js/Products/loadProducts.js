@@ -1,3 +1,5 @@
+import { initAOS, refreshAOS } from "/js/ui.js";
+
 export async function loadProducts() {
   const productGrid = document.getElementById("productGrid");
 
@@ -19,14 +21,16 @@ export async function loadProducts() {
 function createProductCard(product) {
   const card = document.createElement("div");
   card.classList.add("product-card");
+  card.setAttribute("data-aos", "zoom-in");
 
-  card.innerHTML = `
-    <img src="${product.image}" alt="${product.title}">
+  card.innerHTML = ` 
+    <img src="${product.image}" alt="${product.title}" title="Image of ${product.title}" >
     <h2 class="product-title">${product.title}</h2>
     <p>${product.description}</p>
     <span class="price">R$ ${product.price}</span>
-    <button class="add-to-cart">Adicionar ao carrinho</button>
+    <button class="add-to-cart" title="Add to Cart">Add to Cart</button>
   `;
-
+  initAOS();
+  refreshAOS();
   return card;
 }

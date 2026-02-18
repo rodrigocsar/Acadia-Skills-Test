@@ -1,0 +1,116 @@
+:root {
+  /* Cores do tema claro (light) */
+  --bg-primary: #f5f5f5;
+  --bg-secondary: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #ccc;
+  --shadow-color: 0deg 0% 63%;
+  --card-bg: #ffffff;
+  --button-primary: #007bff;
+  --button-secondary: #f0f0f0;
+  --delete-btn: #999;
+  --delete-btn-hover: #d11a2a;
+  --modal-bg: #ffffff;
+
+  /* Sombras (mantém as que você já tem) */
+  --shadow-elevation-low: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.34);
+}
+
+/* Tema escuro (dark) */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #41316d;
+  --text-primary: #f0f0f0;
+  --text-secondary: #b0b0b0;
+  --border-color: #404040;
+  --shadow-color: 0deg 0% 20%;
+  --card-bg: #333333;
+  --button-primary: #0056b3;
+  --button-secondary: #404040;
+  --delete-btn: #808080;
+  --delete-btn-hover: #ff4d4d;
+  --modal-bg: #2d2d2d;
+}
+
+/* Aplicar as variáveis */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.product-card {
+  background: var(--card-bg);
+  box-shadow: var(--shadow-elevation-medium);
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.add-sample-btn {
+  background: var(--button-primary);
+}
+
+.modal {
+  background: var(--modal-bg);
+}
+
+.add-to-cart {
+  background: var(--button-primary);
+}
+
+.delete-btn {
+  background: var(--button-secondary);
+  color: var(--delete-btn);
+}
+
+.delete-btn:hover {
+  color: var(--delete-btn-hover);
+}
+
+.search-input {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Theme toggle */
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  font-size: 20px;
+  margin-left: 5%;
+  padding: 8px;
+  border-radius: 50%;
+  background: none;
+  transition: all 0.5s ease-in-out;
+}
+
+.theme:hover {
+  transform: scale(1.1);
+}
+
+.theme i {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Mostrar/ocultar ícones baseado no tema */
+[data-theme="light"] .fa-sun,
+[data-theme="dark"] .fa-moon {
+  display: inline-block;
+}
+
+[data-theme="light"] .fa-moon,
+[data-theme="dark"] .fa-sun {
+  display: none;
+}

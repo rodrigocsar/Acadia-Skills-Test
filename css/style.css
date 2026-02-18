@@ -29,6 +29,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
+  position: relative;
   gap: 2rem;
 }
 
@@ -170,9 +171,17 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
 
 .product-actions {
   display: flex;
+  flex-direction: row;
+  align-items: center; /* Alinha verticalmente */
+  gap: 4px; /* Espaço entre os botões */
+  width: 100%;
+}
+
+.product-actions .add-to-cart {
+  flex: 1;
+  display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 10px;
+  justify-content: center;
 }
 
 .delete-btn {
@@ -181,11 +190,12 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   cursor: pointer;
   color: #999;
   font-size: 18px;
+  margin-left: 5%;
+  margin-right: 3%;
   transition: 0.2s ease;
 }
 
 .delete-btn:hover {
-  color: #d11a2a;
   transform: scale(1.1);
 }
 
@@ -207,7 +217,7 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   background: white;
   padding: 16px;
   border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-elevation-medium);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -252,9 +262,11 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
 
 .cart-icon {
   position: absolute;
-  right: 1.5rem;
-  font-size: 23px;
+  font-size: 20px;
   cursor: pointer;
+
+  /* Opcional: dar um pouco mais de área de clique */
+  padding: 8px;
 }
 
 .cart-count {
@@ -411,26 +423,4 @@ IMPLEMENTAÇÃO EXTRA MODAL DE CONFIMAÇAÕ DE REMOÇÃO DE PRODUTO*/
   color: white;
   border: none;
   cursor: pointer;
-}
-
-/* 
-   RESPONSIVIDADE
- */
-
-/* Tablet >= 768px */
-@media (min-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Desktop >= 1024px */
-@media (min-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .cart-icon {
-    right: 5.7rem;
-  }
 }

@@ -1,3 +1,4 @@
+import { initAOS, refreshAOS } from "/js/ui.js";
 import { showToast } from "/js/ui.js";
 
 export function setupAddProduct() {
@@ -12,8 +13,22 @@ export function setupAddProduct() {
   const priceInput = document.getElementById("modalPrice");
   const imageInput = document.getElementById("modalImage");
 
-  // iMPLEMTAÇÃO EXTRA LOGICA DE REMOÇÃO DE PRODURTO
+  // Função auxiliar para verificar se produto já existe
+  function isProductDuplicate(productName) {
+    const existingProducts = document.querySelectorAll(
+      ".product-card .product-title",
+    );
+    const productNameLower = productName.toLowerCase().trim();
 
+    for (let product of existingProducts) {
+      if (product.textContent.toLowerCase().trim() === productNameLower) {
+        return true; // Produto duplicado encontrado
+      }
+    }
+    return false; // Produto não existe
+  }
+
+  // iMPLEMTAÇÃO EXTRA LOGICA DE REMOÇÃO DE PRODURTO
   const deleteModal = document.getElementById("deleteModal");
   const confirmDelete = document.getElementById("confirmDelete");
   const cancelDelete = document.getElementById("cancelDelete");
@@ -33,10 +48,8 @@ export function setupAddProduct() {
     productToDelete = null;
   });
 
-  //----------------//////////////
-
   confirmDelete.addEventListener("click", (e) => {
-    e.preventDefault(); // 🔥 garante que nada estranho aconteça
+    e.preventDefault();
 
     if (productToDelete) {
       productToDelete.remove();
@@ -49,17 +62,17 @@ export function setupAddProduct() {
 
   if (!addProductBtn) return;
 
-  // 👇 ABRIR MODAL
+  // ABRIR MODAL
   addProductBtn.addEventListener("click", () => {
     modal.style.display = "flex";
   });
 
-  // 👇 FECHAR MODAL
+  // FECHAR MODAL
   cancelModal.addEventListener("click", () => {
     modal.style.display = "none";
   });
 
-  // 👇 CONFIRMAR
+  // CONFIRMAR
   confirmModal.addEventListener("click", () => {
     const name = nameInput.value.trim();
     const description = descInput.value.trim();
@@ -71,6 +84,16 @@ export function setupAddProduct() {
       return;
     }
 
+    // VERIFICAÇÃO DE DUPLICIDADE
+    if (isProductDuplicate(name)) {
+      showToast(`Product "${name}" already exists!`, "error");
+
+      // Opcional: destacar o produto existente
+      highlightExistingProduct(name);
+
+      return; // Interrompe o cadastro
+    }
+
     const reader = new FileReader();
 
     reader.onload = function (e) {
@@ -78,23 +101,27 @@ export function setupAddProduct() {
 
       const newCard = document.createElement("div");
       newCard.classList.add("product-card");
+      newCard.setAttribute("data-aos", "zoom-in");
 
       newCard.innerHTML = `
-  <img src="${imageURL}" alt="${name}" loading="lazy">
-  <h2 class="product-title">${name}</h2>
-  <p>${description}</p>
-  <span class="price">$${price.toFixed(2)}</span>
+        <img src="${imageURL}" alt="${name}" title="Image of ${name}"loading="lazy">
+        <h2 class="product-title">${name}</h2>
+        <p>${description}</p>
+        <span class="price">$${price.toFixed(2)}</span>
 
-  <div class="product-actions">
-    <button class="add-to-cart">Add to Cart</button>
-    <button class="delete-btn" title="Remove product">
-      <i class="fa-solid fa-trash-can"></i>
-    </button>
-  </div>
-`;
+        <div class="product-actions">
+          <button class="add-to-cart" title="Add to Cart">Add to Cart</button>
+          <button class="delete-btn" title="Remove product from grid">
+            <i class="fa-solid fa-trash-can"></i>
+          </button>
+        </div>
+      `;
 
       productGrid.appendChild(newCard);
       modal.style.display = "none";
+
+      refreshAOS();
+      initAOS();
 
       showToast(`Product "${name}" added!`, "success");
 
@@ -107,4 +134,29 @@ export function setupAddProduct() {
 
     reader.readAsDataURL(file);
   });
+
+  // Função opcional para destacar produto existente
+  function highlightExistingProduct(productName) {
+    const existingProducts = document.querySelectorAll(".product-card");
+    const productNameLower = productName.toLowerCase().trim();
+
+    existingProducts.forEach((card) => {
+      const title = card
+        .querySelector(".product-title")
+        .textContent.toLowerCase()
+        .trim();
+      if (title === productNameLower) {
+        // Remove highlight anterior se existir
+        card.style.transition = "all 0.3s ease";
+        card.style.boxShadow = "0 0 15px rgba(255, 0, 0, 0.5)";
+        card.style.transform = "scale(1.02)";
+
+        // Remove o destaque após 2 segundos
+        setTimeout(() => {
+          card.style.boxShadow = "";
+          card.style.transform = "";
+        }, 2000);
+      }
+    });
+  }
 }

@@ -16,7 +16,14 @@
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
 
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- CSS -->
+
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/theme.css" />
+    <link rel="stylesheet" href="./css/reponsive.css" />
     <title>Loja de Produtos</title>
   </head>
 
@@ -43,8 +50,12 @@
         <input type="file" id="modalImage" accept="image/*" />
 
         <div class="modal-actions">
-          <button id="cancelModal" class="btn-secondary">Cancel</button>
-          <button id="confirmModal" class="btn-primary">Add Product</button>
+          <button id="cancelModal" class="btn-secondary" title="Cancel">
+            Cancel
+          </button>
+          <button id="confirmModal" class="btn-primary" title="Add Product">
+            Add Product
+          </button>
         </div>
       </div>
     </div>
@@ -70,14 +81,21 @@
         class="search-input"
       />
 
-      <div class="cart-icon" id="cartIcon">
-        <i class="fa-solid fa-cart-shopping"></i>
+      <div class="theme">
+        <i class="fa-solid fa-sun" title="Theme Light"></i>
+        <i class="fa-regular fa-moon" title="Theme Dark"></i>
+      </div>
+
+      <div class="cart-icon" id="cartIcon" title="items in affection">
+        <i class="fa-solid fa-cart-shopping" title="Your Cart"></i>
         <span class="cart-count" id="cartCount">0</span>
       </div>
     </header>
 
     <main class="container">
-      <button id="addProductBtn" class="add-sample-btn">+ Add Product</button>
+      <button id="addProductBtn" class="add-sample-btn" title="Add Product">
+        + Add Product
+      </button>
 
       <!-- PRODUCT GRID (LOADED VIA API) -->
       <div class="product-grid" id="productGrid">
@@ -102,10 +120,15 @@
           <div class="cart-total">
             Total: <span id="cartTotal" class="price">$0.00</span>
           </div>
-          <button class="checkout-btn">Checkout</button>
+          <button class="checkout-btn" title="Go to payment">
+            Go to payment
+          </button>
         </div>
       </aside>
     </main>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- Toastify JS (BEFORE your JS) -->
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
