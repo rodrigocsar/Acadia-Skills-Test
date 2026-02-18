@@ -123,7 +123,7 @@ export function setupAddProduct() {
       refreshAOS();
       initAOS();
 
-      showToast(`Product "${name}" added!`, "success");
+      showToast(`Product "${name}" added to grid!`, "success");
 
       // reset
       nameInput.value = "";

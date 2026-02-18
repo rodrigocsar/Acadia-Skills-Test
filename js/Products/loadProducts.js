@@ -14,7 +14,7 @@ export async function loadProducts() {
       productGrid.appendChild(card);
     });
   } catch (error) {
-    productGrid.innerHTML = "<p>Erro ao carregar produtos.</p>";
+    productGrid.innerHTML = "<p>Error loading products.</p>";
   }
 }
 

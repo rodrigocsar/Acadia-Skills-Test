@@ -50,9 +50,9 @@ function toggleCart(button) {
 
   if (!card.classList.contains("added")) {
     card.classList.add("added");
-    button.textContent = "Adicionado";
+    button.textContent = "Added";
     addCardToCart(card, title);
-    showToast("Product removed from cart", "success");
+    showToast("Product added to cart", "success");
   } else {
     card.classList.remove("added");
     button.textContent = "Add to Cart";
