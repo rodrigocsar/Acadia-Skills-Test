@@ -54,7 +54,7 @@ export function initThemeToggle() {
 
     // Mostrar toast de feedback (opcional)
     showToast(
-      `${newTheme === "light" ? "Light" : "Dark"} Theme changed to ${newTheme}`,
+      `${newTheme === "light" ? "Dark" : "Light"} Theme changed to ${newTheme}`,
       "success",
     );
 
