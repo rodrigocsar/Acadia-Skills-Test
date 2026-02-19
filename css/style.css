@@ -188,25 +188,24 @@ button:hover {
   justify-content: center;
 }
 
-.delete-btn {
-  background: none;
+.product-actions .delete-btn {
   border: none;
   cursor: pointer;
-  color: #999;
-  font-size: 18px;
+  background: none;
+  font-size: 20px;
   margin-left: 5%;
   margin-right: 3%;
   transition: 0.2s ease;
 }
 
-.delete-btn:hover {
+.product-actions .delete-btn:hover {
   transform: scale(1.1);
 }
 
 /* -------------------------------------------------------- CARD PRODUCTS*/
 
 .product-card {
-  background: white;
+  background: var(--card-bg);
   padding: 16px;
   border-radius: 10px;
   box-shadow: var(--shadow-elevation-medium);
@@ -251,24 +250,22 @@ button:hover {
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 12px; /* Gap menor no mobile */
-  flex-wrap: wrap; /* Permite quebra se necessário */
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* Container de ícones */
 .container-icons {
   display: flex;
   align-items: center;
-  gap: 8px; /* Gap menor no mobile */
-  margin-left: auto; /* Empurra para direita */
+  gap: 8px;
+  margin-left: auto;
 }
 
-/* Theme toggle */
 .theme {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px; /* Menor no mobile */
+  width: 36px;
   height: 36px;
   font-size: 18px;
   padding: 6px;
@@ -276,7 +273,7 @@ button:hover {
 
   cursor: pointer;
   transition: all 0.3s ease;
-  flex-shrink: 0; /* Não encolhe */
+  flex-shrink: 0;
 }
 
 /* Carrinho */
@@ -285,25 +282,28 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px; /* Menor no mobile */
+  width: 36px;
   height: 36px;
-  font-size: 20px; /* Menor no mobile */
-  margin-right: 0; /* Remove margem fixa */
+  font-size: 20px;
+  margin-right: 0;
   border-radius: 50%;
 
   cursor: pointer;
   transition: all 0.3s ease;
-  flex-shrink: 0; /* Não encolhe */
+  flex-shrink: 0;
 }
 
-/* Contador do carrinho */
+.cart-icon:hover {
+  transform: scale(1.1);
+}
+
 .cart-count {
   position: absolute;
   top: -4px;
   right: -4px;
   background: red;
   color: white;
-  font-size: 10px; /* Menor no mobile */
+  font-size: 10px;
   font-weight: bold;
   min-width: 16px;
   height: 16px;
@@ -314,8 +314,6 @@ button:hover {
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-/* Input de busca */
 
 .search-input:focus {
   outline: none;
@@ -332,7 +330,7 @@ button:hover {
   width: 350px;
   max-width: 90%;
   height: 100%;
-  background: white;
+  background: var(--card-bg);
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
   transition: right 0.3s ease;
@@ -359,7 +357,7 @@ button:hover {
   font-size: 26px;
   font-weight: bold;
   cursor: pointer;
-  color: #333;
+  color: var(--text-primary);
   transition: 0.2s;
 }
 
@@ -396,8 +394,10 @@ button:hover {
   align-items: center;
   gap: 12px;
   padding: 10px;
-  background: #f9f9f9;
+  background: var(--card-bg);
   border-radius: 8px;
+  border: 1px solid #696969;
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 .cart-sidebar .product-card img {

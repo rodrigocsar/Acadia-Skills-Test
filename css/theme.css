@@ -84,12 +84,6 @@ body {
   transform: scale(1.1);
 }
 
-.theme i {
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
 [data-theme="light"] .theme .fa-sun,
 [data-theme="dark"] .theme .fa-moon {
   display: inline-block;
