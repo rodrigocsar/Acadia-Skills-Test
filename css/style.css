@@ -439,23 +439,69 @@ button:hover {
 /* ------------------------------------------------- FOOTER CART*/
 
 .cart-footer {
-  border-top: 1px solid #ddd;
   padding: 15px;
-  background: #fff;
+  border-top: 1px solid var(--border-color);
+  background: none;
+  transition: all 0.3s ease;
 }
 
 .cart-total {
-  font-size: 18px;
+  color: var(--text-primary);
   font-weight: bold;
   margin-bottom: 10px;
 }
 
+.cart-total .price {
+  color: var(--button-primary);
+}
+
 .checkout-btn {
-  width: 100%;
-  padding: 12px;
-  background: #007bff;
-  border-radius: 6px;
+  background: var(--button-primary);
   color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
   cursor: pointer;
+  width: 100%;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background: var(--button-primary);
+  filter: brightness(1.1);
+}
+
+/* Carrinho vazio - se precisar */
+.empty-cart {
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  margin-top: 40px;
+  border-top: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+footer a {
+  color: var(--button-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+footer .copyright {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 10px;
 }
