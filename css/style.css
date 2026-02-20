@@ -297,6 +297,11 @@ button:hover {
   transform: scale(1.1);
 }
 
+.cart-icon:active {
+  transform: translateY(2px);
+  filter: brightness(0.8);
+}
+
 .cart-count {
   position: absolute;
   top: -4px;
@@ -319,6 +324,17 @@ button:hover {
   outline: none;
   border-color: var(--button-primary);
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.magnifying-glass {
+  border: none;
+  font-size: 18px;
+  transition: 1s ease;
+  margin-top: 4px;
+}
+
+.magnifying-glass:hover {
+  background: none;
 }
 
 /* ------------------------------------------------ SIDEBAR DO CARRINHO*/
@@ -364,6 +380,11 @@ button:hover {
 .close-btn:hover {
   transform: scale(1.2);
   background: none;
+}
+
+.close-btn:active {
+  transform: translateY(2px);
+  filter: brightness(0.8);
 }
 
 /* ------------------------------------------------------- LIST OF ITEMS */
